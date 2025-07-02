@@ -1,6 +1,5 @@
-/* Crew page specific styles */
 .crew {
-    background-image: url('crew.jpg');
+    background-image: url('assets/crew/background-crew-desktop.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,14 +7,15 @@
 }
 
 .main-crew {
-    flex: 1;
     padding: 76px 165px 0;
-    min-height: calc(100vh - 136px);
+    position: relative;
+    z-index: 2;
 }
 
 .crew-container {
     max-width: 1110px;
     margin: 0 auto;
+    position: relative;
 }
 
 .page-title {
@@ -26,6 +26,8 @@
     color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 154px;
+    position: relative;
+    z-index: 3;
 }
 
 .page-number {
@@ -40,6 +42,8 @@
     gap: 80px;
     align-items: end;
     min-height: 600px;
+    position: relative;
+    z-index: 3;
 }
 
 .crew-info {
@@ -48,6 +52,8 @@
     justify-content: space-between;
     height: 100%;
     padding-bottom: 94px;
+    position: relative;
+    z-index: 4;
 }
 
 .crew-role {
@@ -57,6 +63,7 @@
     color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
     margin: 0 0 15px 0;
+    position: relative;
 }
 
 .crew-name {
@@ -67,6 +74,7 @@
     color: #ffffff;
     text-transform: uppercase;
     margin: 0 0 27px 0;
+    position: relative;
 }
 
 .crew-bio {
@@ -77,11 +85,13 @@
     color: #D0D6F9;
     max-width: 444px;
     margin-bottom: 120px;
+    position: relative;
 }
 
 .crew-dots {
     display: flex;
     gap: 24px;
+    position: relative;
 }
 
 .dot {
@@ -107,6 +117,8 @@
     justify-content: center;
     align-items: end;
     height: 100%;
+    position: relative;
+    z-index: 4;
 }
 
 .crew-image img {
@@ -114,10 +126,15 @@
     height: auto;
     max-height: 712px;
     object-fit: contain;
+    position: relative;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+    .crew {
+        background-image: url('assets/crew/background-crew-tablet.jpg');
+    }
+    
     .main-crew {
         padding: 40px 80px 0;
     }
@@ -137,6 +154,10 @@
 }
 
 @media (max-width: 768px) {
+    .crew {
+        background-image: url('assets/crew/background-crew-mobile.jpg');
+    }
+    
     .main-crew {
         padding: 32px 24px 0;
     }

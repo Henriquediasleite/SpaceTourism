@@ -1,6 +1,5 @@
-/* Destination page specific styles */
 .destination {
-    background-image: url('Destination.jpg');
+    background-image: url('assets/destination/background-destination-desktop.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,14 +7,15 @@
 }
 
 .main-destination {
-    flex: 1;
     padding: 76px 165px 0;
-    min-height: calc(100vh - 136px);
+    position: relative;
+    z-index: 2;
 }
 
 .destination-container {
     max-width: 1110px;
     margin: 0 auto;
+    position: relative;
 }
 
 .page-title {
@@ -26,6 +26,8 @@
     color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 64px;
+    position: relative;
+    z-index: 3;
 }
 
 .page-number {
@@ -39,22 +41,29 @@
     grid-template-columns: 1fr 1fr;
     gap: 157px;
     align-items: start;
+    position: relative;
+    z-index: 3;
 }
 
 .destination-image {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .destination-image img {
     width: 445px;
     height: 445px;
-    object-fit: cover;
+    object-fit: contain;
+    position: relative;
+    z-index: 4;
 }
 
 .destination-info {
     padding-top: 37px;
+    position: relative;
+    z-index: 4;
 }
 
 .destination-tabs {
@@ -62,6 +71,7 @@
     display: flex;
     gap: 35px;
     margin-bottom: 37px;
+    position: relative;
 }
 
 .tab-button {
@@ -114,6 +124,7 @@
     color: #ffffff;
     text-transform: uppercase;
     margin: 0 0 14px 0;
+    position: relative;
 }
 
 .destination-description {
@@ -124,6 +135,7 @@
     color: #D0D6F9;
     margin-bottom: 54px;
     max-width: 444px;
+    position: relative;
 }
 
 .destination-meta {
@@ -131,6 +143,7 @@
     gap: 79px;
     padding-top: 28px;
     border-top: 1px solid #383B4B;
+    position: relative;
 }
 
 .meta-item {
@@ -158,6 +171,10 @@
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+    .destination {
+        background-image: url('assets/destination/background-destination-tablet.jpg');
+    }
+    
     .main-destination {
         padding: 40px 80px 0;
     }
@@ -178,6 +195,10 @@
 }
 
 @media (max-width: 768px) {
+    .destination {
+        background-image: url('assets/destination/background-destination-mobile.jpg');
+    }
+    
     .main-destination {
         padding: 32px 24px 0;
     }
@@ -235,4 +256,3 @@
         text-align: center;
     }
 }
-

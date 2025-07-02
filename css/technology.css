@@ -1,87 +1,239 @@
-html{
-  background: url('../assets/technology/background-technology-mobile.jpg') no-repeat center center / cover;
+.technology {
+    background-image: url('assets/technology/background-technology-desktop.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 .main-technology {
-  text-align: center;
-  padding: 2rem;
+    padding: 76px 0 0 165px;
+    position: relative;
+    z-index: 2;
 }
 
-.main-technology h1 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
+.technology-container {
+    max-width: 1275px;
+    position: relative;
+}
+
+.page-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 4.725px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 137px;
+    position: relative;
+    z-index: 3;
+}
+
+.page-number {
+    color: rgba(255, 255, 255, 0.25);
+    font-weight: 700;
+    margin-right: 28px;
 }
 
 .technology-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 515px;
+    gap: 130px;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.technology-left {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 4;
 }
 
 .technology-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
 }
 
-.technology-buttons button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
+.tech-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Bellefair', serif;
+    font-size: 32px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.technology-buttons button.active {
-  background: white;
-  color: #0b0d17;
+.tech-button:hover {
+    border-color: #ffffff;
 }
 
-.technology-info h2 {
-  font-size: 0.9rem;
-  opacity: 0.6;
-  text-transform: uppercase;
+.tech-button.active {
+    background: #ffffff;
+    color: #0B0D17;
+    border-color: #ffffff;
 }
 
-.technology-info h3 {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  margin: 0.5rem 0;
+.technology-info {
+    max-width: 470px;
+    position: relative;
 }
 
-.technology-info p {
-  max-width: 30ch;
-  margin: 0 auto;
+.tech-subtitle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    color: #D0D6F9;
+    text-transform: uppercase;
+    margin: 0 0 11px 0;
+    position: relative;
+}
+
+.tech-name {
+    font-family: 'Bellefair', serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 17px 0;
+    position: relative;
+}
+
+.tech-description {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #D0D6F9;
+    position: relative;
+}
+
+.technology-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 4;
 }
 
 .technology-image img {
-  width: 100%;
-  margin-top: 1rem;
+    width: 100%;
+    height: auto;
+    max-height: 527px;
+    object-fit: cover;
+    position: relative;
 }
 
-/* Tablet */
-@media (min-width: 600px) {
-  html {
-    background: url('../assets/technology/background-technology-tablet.jpg') no-repeat center center / cover;
-  }
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .technology {
+        background-image: url('assets/technology/background-technology-tablet.jpg');
+    }
+    
+    .main-technology {
+        padding: 40px 0 0 80px;
+    }
+    
+    .technology-content {
+        gap: 60px;
+        grid-template-columns: 1fr 400px;
+    }
+    
+    .technology-left {
+        gap: 40px;
+    }
+    
+    .tech-button {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .tech-name {
+        font-size: 40px;
+        line-height: 46px;
+    }
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  html {
-    background: url('../assets/technology/background-technology-desktop.jpg') no-repeat center center / cover;
-  }
-  .technology-content {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-  }
-  .technology-info {
-    max-width: 400px;
-  }
+@media (max-width: 768px) {
+    .technology {
+        background-image: url('assets/technology/background-technology-mobile.jpg');
+    }
+    
+    .main-technology {
+        padding: 32px 24px 0;
+    }
+    
+    .page-title {
+        font-size: 20px;
+        letter-spacing: 3.375px;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    
+    .technology-content {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        text-align: center;
+    }
+    
+    .technology-left {
+        flex-direction: column;
+        gap: 26px;
+        order: 2;
+    }
+    
+    .technology-buttons {
+        flex-direction: row;
+        gap: 16px;
+        justify-content: center;
+    }
+    
+    .tech-button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .technology-image {
+        order: 1;
+    }
+    
+    .technology-image img {
+        max-height: 170px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .tech-subtitle {
+        font-size: 14px;
+        letter-spacing: 2.362px;
+        margin-bottom: 9px;
+    }
+    
+    .tech-name {
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+    
+    .tech-description {
+        font-size: 15px;
+        line-height: 25px;
+        max-width: 327px;
+        margin: 0 auto;
+    }
 }
+

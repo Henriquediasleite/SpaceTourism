@@ -1,6 +1,5 @@
-/* Home page specific styles */
 .home {
-    background-image: url('Home.jpg');
+    background-image: url('assets/home/background-home-desktop.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,12 +7,13 @@
 }
 
 .main-home {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 165px;
     min-height: calc(100vh - 136px);
+    position: relative;
+    z-index: 2;
 }
 
 .home-content {
@@ -23,12 +23,15 @@
     gap: 100px;
     width: 100%;
     max-width: 1110px;
+    position: relative;
+    z-index: 3;
 }
 
 .home-text {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    position: relative;
 }
 
 .intro-text {
@@ -38,6 +41,7 @@
     letter-spacing: 4.725px;
     color: #D0D6F9;
     text-transform: uppercase;
+    position: relative;
 }
 
 .main-title {
@@ -48,6 +52,7 @@
     color: #ffffff;
     text-transform: uppercase;
     margin: 0;
+    position: relative;
 }
 
 .description {
@@ -57,12 +62,14 @@
     line-height: 32px;
     color: #D0D6F9;
     max-width: 444px;
+    position: relative;
 }
 
 .home-cta {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .explore-button {
@@ -82,6 +89,7 @@
     text-transform: uppercase;
     transition: all 0.3s ease;
     position: relative;
+    z-index: 4;
 }
 
 .explore-button::before {
@@ -105,6 +113,10 @@
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+    .home {
+        background-image: url('assets/home/background-home-tablet.jpg');
+    }
+    
     .main-home {
         padding: 0 80px;
     }
@@ -125,6 +137,10 @@
 }
 
 @media (max-width: 768px) {
+    .home {
+        background-image: url('assets/home/background-home-mobile.jpg');
+    }
+    
     .main-home {
         padding: 48px 24px;
         min-height: calc(100vh - 96px);

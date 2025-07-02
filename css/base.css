@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +14,8 @@ html, body {
 body {
     background: #0B0D17;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Background com estrelas */
@@ -33,7 +34,7 @@ body::before {
         radial-gradient(2px 2px at 160px 30px, #fff, transparent);
     background-repeat: repeat;
     background-size: 200px 100px;
-    z-index: -1;
+    z-index: -2;
 }
 
 /* Header */
@@ -43,12 +44,14 @@ body::before {
     align-items: center;
     padding: 40px 55px;
     position: relative;
-    z-index: 100;
+    z-index: 10;
+    width: 100%;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    z-index: 11;
 }
 
 .logo svg {
@@ -61,6 +64,7 @@ body::before {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
     padding: 0;
+    z-index: 11;
 }
 
 .nav ul {
@@ -112,6 +116,13 @@ body::before {
 
 .nav a.active::after {
     background: #ffffff;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
 /* Responsive */
