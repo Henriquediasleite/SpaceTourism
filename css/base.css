@@ -1,116 +1,138 @@
 /* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-  font-family: 'Barlow', sans-serif;
-  color: #ffffff;
+html, body {
+    height: 100%;
+    font-family: 'Barlow', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    background: #0B0D17;
+    position: relative;
+}
+
+/* Background com estrelas */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 160px 30px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    z-index: -1;
 }
 
 /* Header */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 55px;
+    position: relative;
+    z-index: 100;
 }
 
-.logo img {
-  height: 40px;
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-/* Nav toggle (hamburger) */
-.nav-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
+.logo svg {
+    width: 48px;
+    height: 48px;
 }
 
-.hamburger {
-  width: 30px;
-  height: 3px;
-  background: white;
-  display: block;
-  position: relative;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: "";
-  width: 30px;
-  height: 3px;
-  background: white;
-  position: absolute;
-  left: 0;
-}
-
-.hamburger::before {
-  top: -10px;
-}
-
-.hamburger::after {
-  top: 10px;
-}
-
-/* Nav hidden on mobile */
+/* Navigation */
 .nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+    padding: 0;
 }
 
 .nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  padding: 4rem 2rem;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 39px 123px 39px 48px;
+    gap: 48px;
 }
 
 .nav li {
-  margin: 1.5rem 0;
+    position: relative;
 }
 
 .nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-.nav.active {
-  transform: translateX(0);
-}
-
-/* Tablet */
-@media (min-width: 600px) {
-  .nav {
-    position: static;
-    height: auto;
-    background: none;
-    transform: none;
-  }
-
-  .nav ul {
-    flex-direction: row;
-    gap: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 11px;
     padding: 0;
-  }
-
-  .nav-toggle {
-    display: none;
-  }
+    transition: all 0.3s ease;
+    position: relative;
 }
+
+.nav a span {
+    font-weight: 700;
+}
+
+.nav a.active::after,
+.nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -39px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ffffff;
+}
+
+.nav a:hover::after {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.nav a.active::after {
+    background: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 24px;
+    }
+    
+    .nav ul {
+        padding: 32px 24px;
+        gap: 32px;
+    }
+    
+    .nav a span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        display: none;
+    }
+}
+

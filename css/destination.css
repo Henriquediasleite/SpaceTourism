@@ -1,115 +1,238 @@
-html {
-  background: url('../assets/destination/background-destination-mobile.jpg') no-repeat center center / cover;
+/* Destination page specific styles */
+.destination {
+    background-image: url('Destination.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 .main-destination {
-  text-align: center;
-  padding: 2rem;
+    flex: 1;
+    padding: 76px 165px 0;
+    min-height: calc(100vh - 136px);
 }
 
-.main-destination h1 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
+.destination-container {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 4.725px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 64px;
+}
+
+.page-number {
+    color: rgba(255, 255, 255, 0.25);
+    font-weight: 700;
+    margin-right: 28px;
 }
 
 .destination-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 157px;
+    align-items: start;
+}
+
+.destination-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .destination-image img {
-  width: 170px;
-  margin-bottom: 1.5rem;
+    width: 445px;
+    height: 445px;
+    object-fit: cover;
+}
+
+.destination-info {
+    padding-top: 37px;
 }
 
 .destination-tabs {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 1rem;
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin-bottom: 37px;
 }
 
-.destination-tabs li {
-  list-style: none;
+.tab-button {
+    background: none;
+    border: none;
+    color: #D0D6F9;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 0;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.destination-tabs button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  text-transform: uppercase;
-  opacity: 0.6;
-  cursor: pointer;
+.tab-button:hover {
+    color: #ffffff;
 }
 
-.destination-tabs button.active {
-  border-bottom: 2px solid white;
-  opacity: 1;
+.tab-button.active {
+    color: #ffffff;
 }
 
-.destination-info h2 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
+.tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    transition: all 0.3s ease;
 }
 
-.destination-info p {
-  max-width: 30ch;
-  margin: 0 auto 1.5rem;
+.tab-button:hover::after {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.tab-button.active::after {
+    background: #ffffff;
+}
+
+.destination-name {
+    font-family: 'Bellefair', serif;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 115px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 14px 0;
+}
+
+.destination-description {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #D0D6F9;
+    margin-bottom: 54px;
+    max-width: 444px;
 }
 
 .destination-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  padding-top: 1rem;
+    display: flex;
+    gap: 79px;
+    padding-top: 28px;
+    border-top: 1px solid #383B4B;
 }
 
-.destination-meta div h3 {
-  font-size: 0.8rem;
-  opacity: 0.6;
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.destination-meta div p {
-  font-size: 1.2rem;
+.meta-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2.362px;
+    color: #D0D6F9;
+    text-transform: uppercase;
 }
 
-/* Tablet */
-@media (min-width: 600px) {
-  html {
-    background: url('../assets/destination/background-destination-tablet.jpg') no-repeat center center / cover;
-  }
-  .destination-image img {
-    width: 250px;
-  }
-  .destination-info h2 {
-    font-size: 3rem;
-  }
-  .destination-meta {
-    flex-direction: row;
-    justify-content: center;
-    gap: 4rem;
-  }
+.meta-value {
+    font-family: 'Bellefair', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  html {
-    background: url('../assets/destination/background-destination-desktop.jpg') no-repeat center center / cover;
-  }
-  .destination-content {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    text-align: left;
-  }
-  .destination-image img {
-    width: 350px;
-  }
-  .destination-info {
-    max-width: 400px;
-  }
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-destination {
+        padding: 40px 80px 0;
+    }
+    
+    .destination-content {
+        gap: 80px;
+    }
+    
+    .destination-image img {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .destination-name {
+        font-size: 80px;
+        line-height: 92px;
+    }
 }
+
+@media (max-width: 768px) {
+    .main-destination {
+        padding: 32px 24px 0;
+    }
+    
+    .page-title {
+        font-size: 20px;
+        letter-spacing: 3.375px;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    
+    .destination-content {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        text-align: center;
+    }
+    
+    .destination-image img {
+        width: 170px;
+        height: 170px;
+    }
+    
+    .destination-info {
+        padding-top: 0;
+    }
+    
+    .destination-tabs {
+        justify-content: center;
+        gap: 26px;
+        margin-bottom: 20px;
+    }
+    
+    .destination-name {
+        font-size: 56px;
+        line-height: 64px;
+        margin-bottom: 1px;
+    }
+    
+    .destination-description {
+        font-size: 15px;
+        line-height: 25px;
+        margin: 0 auto 32px;
+        max-width: 327px;
+    }
+    
+    .destination-meta {
+        flex-direction: column;
+        gap: 32px;
+        padding-top: 32px;
+        align-items: center;
+    }
+    
+    .meta-item {
+        align-items: center;
+        text-align: center;
+    }
+}
+

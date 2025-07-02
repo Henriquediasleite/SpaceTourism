@@ -1,78 +1,187 @@
-html {
-  background: url('../assets/home/background-home-mobile.jpg') no-repeat center center / cover;
+/* Home page specific styles */
+.home {
+    background-image: url('Home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
-/* Hero */
 .main-home {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 165px;
+    min-height: calc(100vh - 136px);
 }
 
-.main-home h1 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 1rem 0;
+.home-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 100px;
+    width: 100%;
+    max-width: 1110px;
 }
 
-.main-home h1 strong {
-  display: block;
-  font-size: 4rem;
-  margin: 1rem 0;
+.home-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.main-home p {
-  max-width: 30ch;
-  line-height: 1.6;
-  margin: 1rem auto;
+.intro-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 4.725px;
+    color: #D0D6F9;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Bellefair', serif;
+    font-size: 150px;
+    font-weight: 400;
+    line-height: 172px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.description {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #D0D6F9;
+    max-width: 444px;
+}
+
+.home-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .explore-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  color: #0b0d17;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-top: 2rem;
-  transition: transform 0.3s;
+    width: 274px;
+    height: 274px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #0B0D17;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bellefair', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.explore-button:hover {
-  transform: scale(1.1);
+.explore-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    z-index: -1;
 }
 
-/* Tablet */
-@media (min-width: 600px) {
-  html {
-    background: url('../assets/home/background-home-tablet.jpg') no-repeat center center / cover;
-  }
-  .main-home h1 strong {
-    font-size: 6rem;
-  }
-  .explore-button {
-    width: 200px;
-    height: 200px;
-  }
+.explore-button:hover::before {
+    width: 450px;
+    height: 450px;
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  html {
-    background: url('../assets/home/background-home-desktop.jpg') no-repeat center center / cover;
-  }
-  .main-home {
-    align-items: flex-start;
-    text-align: left;
-    padding: 4rem;
-  }
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-home {
+        padding: 0 80px;
+    }
+    
+    .home-content {
+        gap: 60px;
+    }
+    
+    .main-title {
+        font-size: 120px;
+        line-height: 140px;
+    }
+    
+    .explore-button {
+        width: 242px;
+        height: 242px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-home {
+        padding: 48px 24px;
+        min-height: calc(100vh - 96px);
+    }
+    
+    .home-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 81px;
+    }
+    
+    .intro-text {
+        font-size: 20px;
+        letter-spacing: 3.375px;
+    }
+    
+    .main-title {
+        font-size: 80px;
+        line-height: 100px;
+    }
+    
+    .description {
+        font-size: 15px;
+        line-height: 25px;
+        max-width: 327px;
+        margin: 0 auto;
+    }
+    
+    .explore-button {
+        width: 150px;
+        height: 150px;
+        font-size: 20px;
+    }
+    
+    .explore-button:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-home {
+        padding: 48px 24px;
+    }
+    
+    .intro-text {
+        font-size: 16px;
+        letter-spacing: 2.7px;
+    }
+    
+    .main-title {
+        font-size: 80px;
+        line-height: 100px;
+    }
+    
+    .description {
+        font-size: 15px;
+        line-height: 25px;
+    }
 }
