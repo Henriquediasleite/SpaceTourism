@@ -15,9 +15,6 @@ Tecnologias: detalhes sobre tecnologias espaciais.
 As informações são carregadas dinamicamente a partir de um arquivo data.json e scripts JavaScript.
 
 Estrutura de Pastas
-pgsql
-Copiar
-Editar
 ├── assets/
 │   ├── crew/
 │   ├── destination/
