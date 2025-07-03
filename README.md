@@ -14,29 +14,6 @@ Tecnologias: detalhes sobre tecnologias espaciais.
 
 As informações são carregadas dinamicamente a partir de um arquivo data.json e scripts JavaScript.
 
-Estrutura de Pastas
-├── assets/
-│   ├── crew/
-│   ├── destination/
-│   ├── technology/
-│   └── home/
-├── css/
-│   ├── base.css
-│   ├── style.css
-│   ├── crew.css
-│   └── technology.css
-├── js/
-│   ├── main.js
-│   ├── crew.js
-│   ├── destination.js
-│   └── technology.js
-├── data.json
-├── index.html
-├── destination.html
-├── crew.html
-├── technology.html
-└── README.md
-
 🖥️ Tecnologias Utilizadas
 HTML5 – Estrutura das páginas.
 
